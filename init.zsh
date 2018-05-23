@@ -88,6 +88,8 @@ Actions:
                  ;;
     debug)       zsh ${ZIM_HOME}/modules/debug/functions/trace-zim
                  ;;
+    extra)       zsh ${ZIM_HOME}/tools/zim_extra
+                 ;;
     *)           print ${usage}; return 1
                  ;;
   esac

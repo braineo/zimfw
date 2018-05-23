@@ -2,3 +2,7 @@
 *.zwc
 *.zwc.old
 custom/
+
+# extra external modules not managed by submodules
+modules/fzf/external/
+modules/fast-syntax-highlighting/external/

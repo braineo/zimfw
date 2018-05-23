@@ -1,0 +1,22 @@
+#
+# zim_extra - clone and update extra module repositories
+#
+
+cd ${ZIM_HOME}
+setopt sh_word_split
+
+extras=(
+    fzf,https://github.com/junegunn/fzf.git,master
+    fast-syntax-highlighting,https://github.com/zdharma/fast-syntax-highlighting.git,master
+)
+
+for i in $extras; do
+    IFS=","
+    set -- $i
+    echo processing $1
+    if ! [[ -d modules/$1/external ]]; then
+        git clone $2 modules/$1/external
+    fi
+    git -C modules/$1/external checkout $3
+    git -C modules/$1/external pull
+done
