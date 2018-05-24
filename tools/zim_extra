@@ -20,3 +20,5 @@ for i in $extras; do
     git -C modules/$1/external checkout $3
     git -C modules/$1/external pull
 done
+
+${ZIM_HOME}/modules/fzf/external/install --bin
